@@ -1,4 +1,2 @@
 # Bootcamp-Use
-Repo utilizado para estudos Back-end do Bootcamp Use Academy - Code Like a Girl 💙
-
-Utilizando TypeScript, NodeJS
+Repo utilizado para o desafio final do Back-end do Use Academy
