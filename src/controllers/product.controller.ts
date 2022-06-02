@@ -25,10 +25,14 @@ export class ProductController {
   }
 
   async getAll(
-    _request: Request,
+    request: Request,
     response: Response,
-  ): Promise<Response<CreatedProductDto[]>> {
+  ): Promise<Response<CreatedProductDto>> {
+    const { name, disponibility, celiacSafe, vegan, vegetarian } =
+      request.query;
+
     const products = await this.productService.getAll();
+
     return response.status(HttpStatus.OK).json(products);
   }
 

@@ -11,6 +11,9 @@ export class CreatedProductDto extends CreateProductDto {
     id,
     personCount,
     category,
+    celiacSafe,
+    vegan,
+    vegetarian,
   }: ProductEntity) {
     super();
     this.id = id;
@@ -24,5 +27,8 @@ export class CreatedProductDto extends CreateProductDto {
         : false;
     this.image = image;
     this.categoryId = category.id;
+    this.celiacSafe = celiacSafe;
+    this.vegan = vegan;
+    this.vegetarian = vegetarian;
   }
 }

@@ -15,30 +15,37 @@ export class ProductService {
     this.productRepository = this.connection.getRepository(ProductEntity);
   }
   async create({
-    id,
     name,
     description,
     value,
     personCount,
     disponibility,
+    celiacSafe,
+    vegan,
+    vegetarian,
     image,
     categoryId,
   }: CreateProductDto): Promise<CreatedProductDto> {
     try {
       const createProduct = this.productRepository.create({
-        category: { id: categoryId },
+        category: {
+          id: categoryId,
+        },
         name,
         description,
-        value: Number(value),
-        disponibility:
-          typeof disponibility === 'string' && disponibility === 'true'
-            ? true
-            : false,
+        value,
+        personCount,
+        disponibility,
         image,
+        celiacSafe,
+        vegan,
+        vegetarian,
       });
       const saveProduct = await this.productRepository.save(createProduct);
       return new CreatedProductDto(saveProduct);
     } catch (error) {
+      console.log({ error });
+
       throw new HttpException(
         'Houve um erro ao cadastrar o produto!',
         HttpStatus.BAD_REQUEST,

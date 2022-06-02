@@ -10,6 +10,9 @@ export class CreateProductDto extends RequestDto {
   disponibility!: boolean;
   image!: string;
   categoryId!: string;
+  celiacSafe!: boolean;
+  vegan!: boolean;
+  vegetarian!: boolean;
 
   static validators(): ValidationChain[] {
     return [

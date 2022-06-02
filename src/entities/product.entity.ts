@@ -30,6 +30,15 @@ export class ProductEntity {
   @Column({ type: 'varchar', nullable: false })
   personCount!: number;
 
+  @Column({ type: 'boolean', nullable: true })
+  celiacSafe!: boolean;
+
+  @Column({ type: 'boolean', nullable: true })
+  vegan!: boolean;
+
+  @Column({ type: 'boolean', nullable: true })
+  vegetarian!: boolean;
+
   @ManyToOne(() => CategoryEntity, (category) => category.products, {
     onDelete: 'CASCADE',
     nullable: false,
