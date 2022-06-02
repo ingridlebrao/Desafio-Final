@@ -115,6 +115,16 @@ routes.put(
       next(error);
     });
   },
+
+  routes.delete(
+    '/products/:id',
+    (request: Request, response: Response, next: NextFunction) => {
+      categoryController.delete(request, response).catch((error: Error) => {
+        next(error);
+      });
+    },
+  );
+  
 );
 
 export { routes };
