@@ -89,6 +89,17 @@ export class ProductService {
     }
   }
 
+  async delete(id: string): Promise<void> {
+    try {
+      await this.productRepository.delete(id);
+    } catch (error) {
+      throw new HttpException(
+        'Erro ao deletar categoria!',
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+  }
+
   async update(
     id: string,
     {
@@ -124,6 +135,7 @@ export class ProductService {
         value,
         disponibility,
         image,
+        personCount,
         category: { id: categoryId },
       });
       await this.productRepository.save(updateProduct);
