@@ -120,7 +120,7 @@ routes.put(
 routes.delete(
   '/categories/:id',
   (request: Request, response: Response, next: NextFunction) => {
-    categoryController.delete(request, response).catch((error: Error) => {
+    productController.delete(request, response).catch((error: Error) => {
       next(error);
     });
   },
