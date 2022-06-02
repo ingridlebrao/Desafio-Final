@@ -18,6 +18,7 @@ export class CategoryService {
       const categories = await this.categoryRepository.find();
       return categories.map((category) => new CreatedCategoryDto(category));
     } catch (error) {
+      console.log(error);
       throw new HttpException(
         'Erro ao listar categorias!',
         HttpStatus.BAD_REQUEST,
@@ -42,10 +43,8 @@ export class CategoryService {
       const savedCategory = await this.categoryRepository.save(createCategory);
       return new CreatedCategoryDto(savedCategory);
     } catch (error) {
-      throw new HttpException(
-        'Erro ao adicionar categoria!',
-        HttpStatus.BAD_REQUEST,
-      );
+      console.log(error);
+      throw new HttpException(`${HttpStatus.BAD_REQUEST}`);
     }
   }
 

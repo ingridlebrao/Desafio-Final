@@ -11,9 +11,5 @@ export const AppDataSource = new DataSource({
     : 'dist/src/config/database/database.sqlite',
   synchronize: true,
   logging: false,
-  entities: [
-    development
-      ? 'src/entities/**/*.entity.ts'
-      : 'dist/entities/**/*.entity.js',
-  ],
+  entities: ['src/entities/**/*.entity.ts'],
 });
