@@ -91,10 +91,11 @@ export class ProductService {
 
   async delete(id: string): Promise<void> {
     try {
+      const product = await this.productRepository.findOne({ where: { id } });
       await this.productRepository.delete(id);
     } catch (error) {
       throw new HttpException(
-        'Erro ao deletar categoria!',
+        'Houve um erro ao excluir curso!',
         HttpStatus.BAD_REQUEST,
       );
     }
