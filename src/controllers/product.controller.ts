@@ -55,10 +55,7 @@ export class ProductController {
     return response.status(HttpStatus.NO_CONTENT).json();
   }
 
-  async delete(
-    { params }: Request,
-    response: Response,
-  ): Promise<Response<void>> {
+  async delete({ params }: Request, response: Response) {
     await this.productService.delete(params.id);
     return response.status(HttpStatus.NO_CONTENT).json();
   }
