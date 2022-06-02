@@ -2,7 +2,7 @@
   "name": "projeto-1",
   "version": "1.0.0",
   "description": "API criada pelo Bootcamp Use Academy Full Stack",
-  "main": "index.js",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --inspect  --ignore-watch node_modules src/server.ts",
     "lint:fix": "eslint . --fix"
