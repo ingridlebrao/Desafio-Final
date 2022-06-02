@@ -118,7 +118,7 @@ routes.put(
 );
 
 routes.delete(
-  '/categories/:id',
+  '/products/:id',
   (request: Request, response: Response, next: NextFunction) => {
     productController.delete(request, response).catch((error: Error) => {
       next(error);
