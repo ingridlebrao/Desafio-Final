@@ -25,6 +25,8 @@ export class ProductService {
     vegetarian,
     image,
     categoryId,
+    createdAt,
+    updatedAt,
   }: CreateProductDto): Promise<CreatedProductDto> {
     try {
       const createProduct = this.productRepository.create({

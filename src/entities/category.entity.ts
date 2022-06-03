@@ -16,10 +16,10 @@ export class CategoryEntity {
   @Column({ type: 'varchar', nullable: false })
   name!: string;
 
-  @CreateDateColumn({ name: 'created_at' })
+  @CreateDateColumn({ name: 'createdAt' })
   createdAt?: Date;
 
-  @UpdateDateColumn({ name: 'updated_at' })
+  @UpdateDateColumn({ name: 'updatedAt' })
   updatedAt?: Date;
 
   @OneToMany(() => ProductEntity, (product) => product.category)

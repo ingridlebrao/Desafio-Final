@@ -14,6 +14,8 @@ export class CreatedProductDto extends CreateProductDto {
     celiacSafe,
     vegan,
     vegetarian,
+    createdAt,
+    updatedAt,
   }: ProductEntity) {
     super();
     this.id = id;
@@ -30,5 +32,7 @@ export class CreatedProductDto extends CreateProductDto {
     this.celiacSafe = celiacSafe;
     this.vegan = vegan;
     this.vegetarian = vegetarian;
+    this.createdAt = createdAt;
+    this.updatedAt = updatedAt;
   }
 }

@@ -57,6 +57,6 @@ export class ProductController {
 
   async delete({ params }: Request, response: Response) {
     await this.productService.delete(params.id);
-    return response.status(HttpStatus.INTERNAL_SERVER_ERROR).json();
+    return response.status(HttpStatus.OK).json();
   }
 }

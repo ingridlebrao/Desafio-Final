@@ -13,6 +13,8 @@ export class CreateProductDto extends RequestDto {
   celiacSafe!: boolean;
   vegan!: boolean;
   vegetarian!: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
 
   static validators(): ValidationChain[] {
     return [

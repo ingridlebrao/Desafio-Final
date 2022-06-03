@@ -6,7 +6,6 @@ import { RequestDto } from '../request-dto/request.dto';
 
 export class CreateCategoryDto extends RequestDto {
   name!: string;
-  // !: obrigatorio
 
   static validators(): ValidationChain[] {
     return [
