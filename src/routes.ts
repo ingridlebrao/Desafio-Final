@@ -126,4 +126,15 @@ routes.delete(
   },
 );
 
+routes.get(
+  '/products/img/:name',
+  (request: Request, response: Response, next: NextFunction) => {
+    productController
+      .getImageByName(request, response)
+      .catch((error: Error) => {
+        next(error);
+      });
+  },
+);
+
 export { routes };

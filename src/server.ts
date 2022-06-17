@@ -1,10 +1,15 @@
 import cors from 'cors';
 import express from 'express';
+import fs from 'fs';
 import { resolve } from 'path';
 import { AppDataSource } from './config/data-source';
 import { env } from './config/enviroment-variables';
 import { errorHandler } from './middlewares';
 import { routes } from './routes';
+
+const directory = resolve(__dirname, '..', 'dist', 'uploads');
+fs.rmSync(directory, { force: true });
+fs.mkdirSync(directory);
 
 const PORT = env.PORT || 3000;
 const app = express();
