@@ -8,7 +8,7 @@ import { errorHandler } from './middlewares';
 import { routes } from './routes';
 
 const directory = resolve(__dirname, '..', 'dist', 'uploads');
-fs.rmSync(directory, { force: true });
+fs.rmSync(directory, { recursive: true, force: true });
 fs.mkdirSync(directory);
 
 const PORT = env.PORT || 3000;

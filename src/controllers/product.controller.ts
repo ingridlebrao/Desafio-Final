@@ -62,7 +62,9 @@ export class ProductController {
   }
 
   async getImageByName({ params }: Request, response: Response): Promise<any> {
-    const directory = resolve(__dirname, '..', 'uploads');
+    const directory = resolve(__dirname, '..', '..', 'dist', 'uploads');
+    console.log({ directory });
+
     return response
       .status(HttpStatus.OK)
       .sendFile(`${directory}/${params.name}`);
