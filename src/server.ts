@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express from 'express';
 import { resolve } from 'path';
 import { AppDataSource } from './config/data-source';
@@ -8,6 +9,12 @@ import { routes } from './routes';
 const PORT = env.PORT || 3000;
 const app = express();
 app.use(express.json());
+app.use(
+  cors({
+    origin: '*',
+    methods: ['GET', 'HEAD', 'POST', 'PUT', 'PATCH', 'DELETE'],
+  }),
+);
 app.use(routes);
 app.use(errorHandler);
 app.use('/files', express.static(resolve(__dirname, '..', 'uploads')));
